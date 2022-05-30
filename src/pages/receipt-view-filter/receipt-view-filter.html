@@ -1,0 +1,48 @@
+
+<ion-header>
+
+<ion-navbar color='primary'>
+  <ion-buttons start left>
+    <button ion-button  icon-only (click)="dismiss()" >
+      <ion-icon name='close'>
+
+      </ion-icon>
+    </button>
+  </ion-buttons>
+
+
+  <ion-buttons end >
+      <button ion-button  icon-only (click)="clear()" >
+       Clear Filters
+      </button>
+    </ion-buttons>
+  <ion-title>
+    Filter
+  </ion-title>
+</ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      Date 
+    </ion-list-header>
+    <ion-item>
+  <ion-datetime displayFormat="MMM YYYY"  min="2018" max="2019"  ></ion-datetime>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+
+    </ion-list-header>
+  </ion-list>
+
+
+
+</ion-content>

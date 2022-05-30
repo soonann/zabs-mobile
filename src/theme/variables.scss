@@ -1,0 +1,208 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+
+$colors: (
+  primary:   #00b050,
+  secondary:  #488aff,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  // Custom colors below this
+  active-grey:#777777,
+  cust-purple: #6c63ff,
+  white: #FFFFFF,
+  grey-text: #8e9093,
+  yellow-fav: #ffd519,
+
+);
+
+
+
+$colors-old: (
+  primary:   #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+);
+
+
+.zabs-list-item-padding{
+  padding-left: 32px !important;
+  padding-right: 16px !important;
+}
+
+.zabs-list-item-header{
+  background-color:#dedede !important;
+  font-size: 10px;
+  // padding-top: 2px !important;
+  margin-bottom:0px !important;
+}
+
+
+.item-selected {
+  background-color: rgb(240, 240, 240) !important;
+}
+
+// side menu start
+
+$menu-width: 300px;
+
+
+#menu-list{
+  padding-left:10px;
+}
+
+.ion-icon-today-md{
+  fill: color($colors, primary);
+}
+
+//side menu end
+
+.zabs-nav-sidemenu-header{
+  background-color: color($colors, primary);
+}
+
+.zabs-profile-name-padding{
+  padding: 5px;
+}
+
+
+
+.zabs-space{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.zabs-center{
+  margin:0 auto;
+  text-align: center;
+}
+
+.zabs-left{
+  text-align: left !important;
+
+}
+.zabs-right{
+  text-align: right !important;
+}
+
+.zabs-receipt-price{
+  padding-top: 10px;
+  padding-bottom:10px;
+}
+
+.zabs-grid-header-row{
+  margin-bottom:4px;
+}
+
+.zabs-receipt-important{
+  font-weight:bold !important;
+}
+
+.zabs-receipt-section{
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  margin-top: 10px;
+  margin-bottom:10px;
+
+ 
+}
+
+
+.zabs-back-button{
+    margin: 0 6px;
+    padding: 0 2px;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    min-width: 44px;
+}
+
+.popout-popover {
+  padding: 50% 10%  !important;
+}
+
+.popout-modal {
+  background: rgba(0, 0, 0, 0.5) !important;
+  padding: 20% 10%  !important;
+}
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

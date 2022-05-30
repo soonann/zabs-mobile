@@ -1,0 +1,62 @@
+<!--
+  Generated template for the ReceiptFavouritesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color='primary'> 
+    <!-- ({{receiptList.length}}/200) -->
+    <ion-title>Favourites </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  
+    <ion-list>
+      
+
+ 
+        <ion-item-sliding *ngFor="let item of receiptList">
+  
+          <ion-item 
+          class='zabs-list-item-padding' >
+  
+          
+            <ion-thumbnail item-start item-left>
+              <img src="{{item.merchant.logo}}" />
+            </ion-thumbnail>
+  
+            <h2 class='zabs-receipt-important' >{{item.merchant.name}} 
+              <ion-icon name="star" *ngIf='item.isSaved' color="yellow-fav"></ion-icon>
+            </h2>
+            <p ion-text color="grey-text" style="font-size:1.2rem" >{{ item.date  | date:"dd/MM/yyyy HH:MM"}}</p>
+            <div item-end>${{item.transaction.total | number:'1.2-2' }}</div>
+          </ion-item>
+  
+          <ion-item-options side="right">
+  
+            <button *ngIf='item.isSaved' (click)='toggleFav(item)' ion-button color='danger'>
+                <ion-icon name="star" ></ion-icon>
+                Un-Favourite
+            </button>
+  
+            <button  *ngIf='!item.isSaved' (click)='toggleFav(item)' ion-button color="yellow-fav">
+              <ion-icon name="star-outline" ></ion-icon>
+              Favourite
+            </button>
+  
+          </ion-item-options>
+  
+  
+      </ion-item-sliding>
+  
+  
+      </ion-list>
+  
+  
+
+</ion-content>

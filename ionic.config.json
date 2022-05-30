@@ -1,0 +1,13 @@
+{
+  "name": "zabs",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/v1",
+      "proxyUrl": "https://jsonplaceholder.typicode.com/todos/1"
+    }
+  ]
+}

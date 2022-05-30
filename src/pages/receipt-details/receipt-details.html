@@ -1,0 +1,200 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Receipt Details
+    </ion-title>
+
+    <ion-buttons end>
+        <button ion-button icon-only *ngIf="receipt.isManualEntry" >
+            <ion-icon name="create"></ion-icon>
+        </button>
+
+        <button ion-button icon-only >
+            <ion-icon name="more"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+
+
+
+<div class='receipt-container'>
+  <ion-grid >
+      <ion-row (click)="viewMerchantPage(receipt.merchant.websiteUrl)">
+        <ion-col></ion-col>
+        <ion-col> 
+          <!-- TODO: Add onclick to redirect to merchant's website -->
+          <ion-thumbnail class='zabs-center'> 
+            <img src="{{receipt.merchant.logo}}"  class='zabs-center'/>
+          </ion-thumbnail>
+        </ion-col>
+        <ion-col></ion-col>
+  
+      </ion-row>
+      
+      <ion-row >
+        <h2 class='zabs-center zabs-space'>{{receipt.merchant.name}}</h2> 
+      </ion-row>
+
+      <ion-row class='zabs-grid-row'>
+          <h5 class='zabs-center'>{{receipt.merchant.branch}}</h5> 
+      </ion-row>
+      
+      <ion-row>
+          <h1 class='zabs-center zabs-space zabs-receipt-price'><b>{{receipt.transaction.total  | currency:'SGD$'}}</b></h1> 
+      </ion-row>
+
+  </ion-grid>
+  
+
+
+
+
+ <!-- Transaction Section -->
+    <ion-grid class='zabs-receipt-section'>
+      <ion-row class='zabs-grid-header-row'>
+        <ion-item>
+            <h2 class='zabs-center zabs-space zabs-receipt-important'>Transaction</h2> 
+        </ion-item>
+      </ion-row>
+
+  
+      <ion-row>
+        <ion-col class='zabs-left zabs-receipt-important' col-6>Item</ion-col>
+        <ion-col class='zabs-right zabs-receipt-important' col-2> Qty</ion-col>
+        <ion-col class='zabs-right zabs-receipt-important' col-4> Price</ion-col>
+      </ion-row>
+
+      <!-- Main items -->
+      <ion-row *ngFor="let item of receipt.transaction.items">
+        <ion-col class='zabs-left' col-6>{{item.name}}</ion-col>
+        <ion-col class='zabs-right' col-2>{{item.qty}}</ion-col>
+        <ion-col class='zabs-right' col-4>{{item.price  | number:'1.2-2'}}</ion-col>
+
+      </ion-row>
+     
+   
+      
+
+      <!-- Subtotal -->
+      <ion-row>
+          <ion-col class='zabs-left zabs-receipt-important' col-6>Subtotal</ion-col>
+          <ion-col class='zabs-right' col-2></ion-col>
+          <ion-col class='zabs-right zabs-receipt-important' col-4> {{receipt.transaction.subtotal  | number:'1.2-2'}} </ion-col>
+      </ion-row>
+    
+      <!-- Subitems -->
+      <ion-row *ngFor="let item of receipt.transaction.subItems">
+          <ion-col class='zabs-center' col-6>{{item.name}}</ion-col>
+          <ion-col class='zabs-center' col-2>{{item.qty}}</ion-col>
+          <ion-col class='zabs-center' col-4>{{item.price  | number:'1.2-2'}}</ion-col>
+      </ion-row>
+
+      <!-- Total -->
+      <ion-row>
+          <ion-col class='zabs-left zabs-receipt-important' col-6>Total</ion-col>
+          <ion-col class='zabs-right' col-2></ion-col>
+          <ion-col class='zabs-right zabs-receipt-important' col-4> {{receipt.transaction.total  | number:'1.2-2'}} </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+
+
+
+
+
+   <!-- Payment Section -->
+    <ion-grid class='zabs-receipt-section' *ngIf='receipt.payment != null && receipt.payment != undefined && !receipt.isManualEntry '>
+        <ion-row>
+          <ion-item>
+              <h2 class='zabs-center zabs-space zabs-receipt-important'>Payment</h2> 
+          </ion-item>
+        </ion-row>
+      
+        <!-- Important stuff to bold for payment like payment mode-->
+        <ion-row>
+            <ion-col class='zabs-left' col-6>Payment Mode:</ion-col>
+            <ion-col class='zabs-right' col-2></ion-col>
+            <ion-col class='zabs-right' col-4>{{receipt.payment.paymentMode}}</ion-col>
+        </ion-row>
+
+        <!-- details on the payment mode like visa ending w/ what and change given  -->
+        <ion-row *ngFor="let item of [ {key:''  }  ]">
+          <ion-col class='zabs-left' col-6></ion-col>
+          <ion-col class='zabs-right' col-2></ion-col>
+          <ion-col class='zabs-right' col-4></ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+
+
+
+
+      <!-- Order Section -->
+      <ion-grid class='zabs-receipt-section' *ngIf='receipt.order != null  && receipt.order != undefined && !receipt.isManualEntry'>
+        
+        <ion-row  >
+            <ion-item>
+                <h2 class='zabs-center zabs-space zabs-receipt-important'>Order</h2> 
+            </ion-item>
+        </ion-row>
+
+   
+        <ion-row *ngFor="let item of orderSize1">
+          <h1 class='zabs-center zabs-space zabs-receipt-price'    ><b>{{item.name}}: {{item.value}}</b></h1> 
+
+        </ion-row>
+        <ion-row  *ngFor="let item of orderSize2">
+
+            <ion-col class='zabs-left'  col-6>{{item.name}}</ion-col>
+            <ion-col class='zabs-right' col-2></ion-col>
+            <ion-col class='zabs-right'   col-4>{{item.value}}</ion-col>
+  
+
+          </ion-row>
+          <ion-row  *ngFor="let item of orderSize3">
+
+              <ion-col class='zabs-left'   col-6>{{item.name}}</ion-col>
+              <ion-col class='zabs-right'  col-2></ion-col>
+              <ion-col class='zabs-right'   col-4>{{item.value}}</ion-col>
+    
+  
+            </ion-row>
+
+        <!-- Check if there is order details -->
+    
+
+    </ion-grid>
+    
+      
+
+
+
+    <!-- ZABS Section -->
+    <ion-grid class='zabs-receipt-section'  *ngIf='zabsQR != null && zabsQR != undefined && !receipt.isManualEntry'>
+      <ion-row>
+          <ion-item>
+              <h2 class='zabs-center zabs-space zabs-receipt-important'>ZABS</h2> 
+          </ion-item>
+        </ion-row>
+
+
+      <ion-row>
+        <ngx-qrcode class='zabs-center' [qrc-value]="zabsQR"></ngx-qrcode>
+      </ion-row>
+      <ion-row>
+        <ion-col class='zabs-left zabs-receipt-important' col-2>RID:</ion-col>
+      
+        <ion-col class='zabs-right zabs-receipt-important' col-10>{{zabsQR}}</ion-col>
+      </ion-row>
+  </ion-grid>
+
+</div>
+
+</ion-content>

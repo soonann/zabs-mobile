@@ -1,0 +1,80 @@
+{
+  "merchants" : {
+    "-LUUV4O1TlCiJD3A_XbQ" : {
+      "branch" : "Ang Mo Kio",
+      "logo" : "assets/img/placeholder2.png",
+      "name" : "McDonald's",
+      "websiteUrl" : "https://www.mcdonalds.com.sg/"
+    },
+    "-LUUVIp9L8NUBHeg76lT" : {
+      "branch" : "North Point",
+      "logo" : "assets/img/placeholder1.png",
+      "name" : "Pizzamaru",
+      "websiteUrl" : "https://www.chope.co/singapore-restaurants/restaurant/pizza-maru-bugis-plus?source=chope&sub_source=adw_google&utm_source=google&utm_medium=cpc&gclid=CjwKCAiA0uLgBRABEiwAecFnk5lnhyqOglff3tYiK8KCyqCwB7cXWgN0oAF_vgheGIMZR0gB6BDgUhoClW0QAvD_BwE&gclsrc=aw.ds"
+    }
+  },
+  "receipts" : {
+    "6TMunYRtfVUiWnfE0ngt2O2BuIT2" : {
+      "-LU3c1dBBX88KUS8B1HL" : {
+        "date" : 1546911134,
+        "isManualEntry" : false,
+        "merchant" : {
+          "branch" : "Ang Mo Kio",
+          "logo" : "https://firebasestorage.googleapis.com/v0/b/zabs-fb-dev/o/placeholder2.png?alt=media&token=769c4488-bb58-4fe1-b498-0095e08411fe",
+          "name" : "McDonald's",
+          "websiteUrl" : "https://www.mcdonalds.com.sg/"
+        },
+        "r_order" : {
+          "items" : [ {
+            "name" : "Queue No",
+            "size" : 1,
+            "value" : 2625
+          } ]
+        },
+        "r_payment" : {
+          "paymentMode" : "Card"
+        },
+        "r_transaction" : {
+          "items" : [ {
+            "name" : "GrCMcWrp+Salad+Dasani Hp",
+            "price" : 8.45,
+            "qty" : 1
+          } ]
+        }
+      },
+      "-LU3c44f3ssMONS2pjK1" : {
+        "date" : "12/12/2018",
+        "isManualEntry" : false,
+        "merchant" : {
+          "branch" : "North Point",
+          "logo" : "https://firebasestorage.googleapis.com/v0/b/zabs-fb-dev/o/placeholder1.png?alt=media&token=12b8b453-a1cb-415c-aa93-aae5b7d28db4",
+          "name" : "Pizzamaru",
+          "websiteUrl" : "https://www.chope.co/singapore-restaurants/restaurant/pizza-maru-bugis-plus?source=chope&sub_source=adw_google&utm_source=google&utm_medium=cpc&gclid=CjwKCAiA0uLgBRABEiwAecFnk5lnhyqOglff3tYiK8KCyqCwB7cXWgN0oAF_vgheGIMZR0gB6BDgUhoClW0QAvD_BwE&gclsrc=aw.ds"
+        },
+        "r_payment" : {
+          "paymentMode" : "Card"
+        },
+        "r_transaction" : {
+          "items" : [ {
+            "name" : "Large Pizza",
+            "price" : 108.65,
+            "qty" : 1
+          } ]
+        }
+      }
+    }
+  },
+  "tokens" : {
+    "-LVDHGGQOGWCFlwC7mDs" : {
+      "user" : "6TMunYRtfVUiWnfE0ngt2O2BuIT2"
+    },
+    "-LVGI9BfB2OyQwkcA1ki" : {
+      "user" : "6TMunYRtfVUiWnfE0ngt2O2BuIT2"
+    }
+  },
+  "users" : {
+    "6TMunYRtfVUiWnfE0ngt2O2BuIT2" : {
+      "deviceId" : "egxaDvKh4Ms:APA91bFxbUp6cSwr2IvrYUwbACMH728LozX_k1BNE4RuP9JsfzuLdVtH96zSztKwnOsDNSUMx9B2Zyf3bSY0ZRfjcIqeL21DoL27N8YRDNx7uOMSMeiBZ3BR0hqGzet3IpMK-uG97tp5"
+    }
+  }
+}
