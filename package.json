@@ -55,7 +55,7 @@
     "ngx-qrcode2": "0.0.9",
     "phonegap-nfc": "1.0.3",
     "rxjs": "^6.3.3",
-    "rxjs-compat": "^6.3.3",
+    "rxjs-compat": "^6.6.7",
     "sw-toolbox": "3.6.0",
     "typescript": "~2.6.2",
     "zone.js": "0.8.26"
