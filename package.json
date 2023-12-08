@@ -54,7 +54,7 @@
     "ionicons": "3.0.0",
     "ngx-qrcode2": "0.0.9",
     "phonegap-nfc": "1.0.3",
-    "rxjs": "^6.3.3",
+    "rxjs": "^6.6.7",
     "rxjs-compat": "^6.3.3",
     "sw-toolbox": "3.6.0",
     "typescript": "~2.6.2",
